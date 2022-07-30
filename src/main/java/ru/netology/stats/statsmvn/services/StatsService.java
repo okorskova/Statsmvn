@@ -46,7 +46,16 @@ public class StatsService {
     public int countLessAverSales(long[] sales) {
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (i < averageSales(sales)) {
+            if (sales[i] < averageSales(sales)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    public int countMoreAverSales(long[] sales) {
+        int count = 0;
+        for (long i : sales) {
+            if (i > averageSales(sales)) {
                 count++;
             }
         }
